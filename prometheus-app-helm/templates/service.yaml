@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-sample-app-service
+  labels:
+     job: my-sample-app
+     app: my-sample-app
+spec:
+  selector:
+    app: my-sample-app
+  type: NodePort
+  ports:
+    - protocol: TCP
+      name: http-web
+      port: 80
+      targetPort: 80
+
